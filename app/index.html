@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="test1App">
+  <body ng-app="test1App" class="bdback">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar navbar-default bxsh" role="navigation">
         <div class="container">
           <div class="navbar-header">
 
@@ -32,15 +32,27 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">test1</a>
+            <a class="navbar-brand" href="#/">
+                <!-- <img id='gsmlogo' src="images/GuitarCenterlogo.png" width=80px height=40px> -->
+                <img id='gsmlogo' src="images/gutarsmlogo.png" width=40px height=40px>
+            </a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
+              <li><a href="#/">Guitars</a></li>
+              <li><a ng-href="#/purchase">Bass</a></li>
+            <li class="dropdown "><a href="#/" id="drop1" data-toggle="dropdown" class="dropdown-toggle" role="button">Electric<b class="caret"></b></a>
+              <ul role="menu" class="dropdown-menu" aria-labelledby="drop1">
+                <li role="presentation"><a href="#/" role="menuitem">Nature</a></li>
+                <li role="presentation"><a href="#/" role="menuitem">Cell</a></li>
+                <li role="presentation"><a href="#/" role="menuitem">Science</a></li>
+              </ul>
+            </li>
+              <li><a ng-href="#/confirm">Drums</a></li>
+              <li><a ng-href="#/confirm">Used Gear</a></li>
+              <li><a ng-href="#/confirm">Clearance</a></li>
             </ul>
           </div>
         </div>
@@ -53,7 +65,11 @@
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      <img class="footspacers" src="images/guit.png" width="80px" height="80px">
+      <img class="footspacers" src="images/drum.png" width="80px" height="80px">
+      <img class="footspacers" src="images/bass.png" width="80px" height="80px">
+      <img class="pull-right micmove" src="images/mic.png" width="80px" height="80px">
+        <p id="footcc">&copy; Hersh Inc.</p>
       </div>
     </div>
 
@@ -84,9 +100,12 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/purchase.js"></script>
+        <script src="scripts/controllers/confirm.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.0/ui-bootstrap-tpls.js"></script>
         <!-- endbuild -->
 </body>
 </html>

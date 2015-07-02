@@ -21,13 +21,39 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'mainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/purchase', {
+        templateUrl: 'views/purchase.html',
+        controller: 'purchaseCtrl'
+      })
+      .when('/confirm', {
+        templateUrl: 'views/confirm.html',
+        controller: 'confirmCtrl'
+      })
+      .when('/myCarousel', {
+        templateUrl: 'views/main.html',
+        controller: 'mainCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
+  });
+
+angular.module('test1App')
+  .service('guitserv',function($http){
+     this.imgct="";
+    return{
+      getStuff: function (GuitData) {
+        return $http.get('guitardata.json').success(function(resp){
+            GuitData=resp;
+        }).error(function(){
+            console.log('Error');
+        });
+      }
+    };
+      
+
+      
+
   });
